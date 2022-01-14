@@ -18,10 +18,11 @@ using namespace std;
 
 int main(){
 	char nama[100], menu[100], back;
-	int jumlah, minuman, minum, total, bayar, kurang, bonus, pajak, kembalian, 
-		harga[5]={15500, 25000, 37500, 34000, 28500}, i=0;
+	int jumlah, minuman, minum,  bayar, kurang, bonus, pajak, kembalian, iyaa;
+
 	bool saldo;
     int diskon = 20000;
+    int total=0;
     
 	do{
 		
@@ -31,6 +32,7 @@ int main(){
 		cout<<endl;
 		cout<<"Masukkan Nama Anda : " ; cin >> nama; 
 		cout<<"Pilihan kopi yang tersedia---"<<endl;
+		ulangg:
 		cout<<"--------------------------------------------------------------------------"<<endl;
 		cout<<"|	[1] Caffe Americano        = Rp 15.500                           |"   <<endl;
 		cout<<"|	[2] Caramel Macchiato      = RP 25.000                           |"   <<endl;
@@ -41,65 +43,28 @@ int main(){
 		
 		cout<<"	       (Masukkan Menu Kopi yang diinginkan berdasarkan Nomor)"<<endl;
 		cout<<" Silahkan Pilih Kopi anda : "; cin >> minuman;
-		
+	
 		switch(minuman){
 			case 1:
 			    cout << "Anda memilih Caffe Americano " << endl;
-				break;
-			case 2:
-				cout << "Anda memilih Caramel Macchiato" << endl;
-				i=1;
-				break;
-			case 3:
-				cout << "Anda memilih Caffe Mocha" << endl;
-				i=2;
-				break;
-			case 4:
-		    	cout << "Anda memilih Caffe Latte" << endl;
-				i=3;
-				break;
-			case 5:
-		    	cout << "Anda memilih Cold Brew " << endl;
-				i=4;
-				break;
-			default:
-				cout << "Pilihan menu yang anda pilih tidak tersedia..." << endl;
-				goto ulang;
-		}
-	
-
-		
-		cout<<endl;
-		cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
+			    cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
 		
 	
-		minum = jumlah * harga[i];
+		minum = jumlah * 15500;
 		pajak = minum * 0.10; //pajak restoran 10%
-		total = pajak + minum;
+		total += pajak + minum;
 		cout << endl;
 		cout << "-------------------------------------------------------" << endl;
 		cout << "|  	               MoonBucks                       |" << endl;
 		cout << "-------------------------------------------------------" << endl;
 		cout << "        Nama Pemesan          : "	<< nama     <<endl;
-		
-		if(minuman == 1){
 		    cout << "        Menu Kopi             : Caffe Americano"         <<endl;
-		}if(minuman == 2){
-		    cout << "        Menu Kopi             : Caramel Macchiato"       <<endl;
-		}if(minuman == 3){
-		    cout << "        Menu Kopi             : Caffe Mocha"             <<endl;
-		}if(minuman == 4){
-		    cout << "        Menu Kopi             : Caffe Latte"             <<endl;
-		}if(minuman == 5){
-		    cout << "        Menu Kopi             : Cold Brew"               <<endl;
-		}
 		
 		cout << "        Jumlah Kopi           : "	<< jumlah   <<" cup" <<endl;
-		cout << "        Harga Kopi            : "	<< harga[i] << " * "   << jumlah << endl;
+		cout << "        Harga Kopi            : "	<< 15500 << " * "   << jumlah << endl;
 		cout << "        Pajak Restaurant      : "	<< pajak    <<endl;	
 		cout << "        Total Pembayaran      : Rp " << total    <<endl;
-		
-		if(jumlah>=4){
+			if(jumlah>=4){
 			bonus = total - diskon;
 			total = bonus;
 			cout << endl;
@@ -107,7 +72,171 @@ int main(){
 			cout << "Total Pembayaran Setelah diskon  : Rp "<< total << endl;
 		}
 		
+		cout << "Apakah anda ingin memesan lagi? [jika iya ketik 1 / jika tidak ketik 2] :  "; cin>> iyaa;
+		if(iyaa == 1){
+		    goto ulangg;
+		}if(iyaa == 2){
+		    goto jadi;
+		}
+				break;
+				
+			case 2:
+				cout << "Anda memilih Caramel Macchiato" << endl;
+				cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
+		
+	
+		minum = jumlah * 25000;
+		pajak = minum * 0.10; //pajak restoran 10%
+		total += pajak + minum;
+		cout << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "|  	               MoonBucks                       |" << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "        Nama Pemesan          : "	<< nama     <<endl;
+		    cout << "        Menu Kopi             : Caramel Macchiato"       <<endl;
+		cout << "        Jumlah Kopi           : "	<< jumlah   <<" cup" <<endl;
+		cout << "        Harga Kopi            : "	<< 25000 << " * "   << jumlah << endl;
+		cout << "        Pajak Restaurant      : "	<< pajak    <<endl;	
+		cout << "        Total Pembayaran      : Rp " << total    <<endl;
+		
+			if(jumlah>=4){
+			bonus = total - diskon;
+			total = bonus;
+			cout << endl;
+			cout << "Anda mendapatkan diskon Potongan Harga : Rp " << diskon << endl;
+			cout << "Total Pembayaran Setelah diskon  : Rp "<< total << endl;
+		}
+		
+		cout << "Apakah anda ingin memesan lagi? [jika iya ketik 1 / jika tidak ketik 2] :  "; cin>> iyaa;
+		if(iyaa == 1){
+		    goto ulangg;
+		}if(iyaa == 2){
+		    goto jadi;
+		}
+				
+				break;
+				
+			case 3:
+				cout << "Anda memilih Caffe Mocha" << endl;
+				cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
+		
+	
+		minum = jumlah * 37500;
+		pajak = minum * 0.10; //pajak restoran 10%
+		total += pajak + minum;
+		cout << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "|  	               MoonBucks                       |" << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "        Nama Pemesan          : "	<< nama     <<endl;
+		    cout << "        Menu Kopi             : Caffe Mocha"             <<endl;
+
+		cout << "        Jumlah Kopi           : "	<< jumlah   <<" cup" <<endl;
+		cout << "        Harga Kopi            : "	<< 37500 << " * "   << jumlah << endl;
+		cout << "        Pajak Restaurant      : "	<< pajak    <<endl;	
+		cout << "        Total Pembayaran      : Rp " << total    <<endl;
+		
+			if(jumlah>=4){
+			bonus = total - diskon;
+			total = bonus;
+			cout << endl;
+			cout << "Anda mendapatkan diskon Potongan Harga : Rp " << diskon << endl;
+			cout << "Total Pembayaran Setelah diskon  : Rp "<< total << endl;
+		}
+		
+		cout << "Apakah anda ingin memesan lagi? [jika iya ketik 1 / jika tidak ketik 2] :  "; cin>> iyaa;
+		if(iyaa == 1){
+		    goto ulangg;
+		}if(iyaa == 2){
+		    goto jadi;
+		}
+			
+				break;
+				
+			case 4:
+			
+		    	cout << "Anda memilih Caffe Latte" << endl;
+		    	cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
+		
+
+		minum = jumlah * 34000;
+		pajak = minum * 0.10; //pajak restoran 10%
+		total += pajak + minum;
+		cout << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "|  	               MoonBucks                       |" << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "        Nama Pemesan          : "	<< nama     <<endl;
+		    cout << "        Menu Kopi             : Caffe Latte"             <<endl;
+		cout << "        Jumlah Kopi           : "	<< jumlah   <<" cup" <<endl;
+		cout << "        Harga Kopi            : "	<< 34000 << " * "   << jumlah << endl;
+		cout << "        Pajak Restaurant      : "	<< pajak    <<endl;	
+		cout << "        Total Pembayaran      : Rp " << total    <<endl;
+		
+			if(jumlah>=4){
+			bonus = total - diskon;
+			total = bonus;
+			cout << endl;
+			cout << "Anda mendapatkan diskon Potongan Harga : Rp " << diskon << endl;
+			cout << "Total Pembayaran Setelah diskon  : Rp "<< total << endl;
+		}
+		
+		cout << "Apakah anda ingin memesan lagi? [jika iya ketik 1 / jika tidak ketik 2] :  "; cin>> iyaa;
+		if(iyaa == 1){
+		    goto ulangg;
+		}if(iyaa == 2){
+		    goto jadi;
+		}
+				
+				break;
+				
+			case 5:
+			
+		    	cout << "Anda memilih Cold Brew " << endl;
+		    	cout<<"Jumlah Kopi yang dibeli : ";cin>> jumlah;
+		
+	
+		minum = jumlah * 28500;
+		pajak = minum * 0.10; //pajak restoran 10%
+		total += pajak + minum;
+		cout << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "|  	               MoonBucks                       |" << endl;
+		cout << "-------------------------------------------------------" << endl;
+		cout << "        Nama Pemesan          : "	<< nama     <<endl;
+		    cout << "        Menu Kopi             : Cold Brew"               <<endl;
+		cout << "        Jumlah Kopi           : "	<< jumlah   <<" cup" <<endl;
+		cout << "        Harga Kopi            : "	<< 28500 << " * "   << jumlah << endl;
+		cout << "        Pajak Restaurant      : "	<< pajak    <<endl;	
+		cout << "        Total Pembayaran      : Rp " << total    <<endl;
+		
+			if(jumlah>=4){
+			bonus = total - diskon;
+			total = bonus;
+			cout << endl;
+			cout << "Anda mendapatkan diskon Potongan Harga : Rp " << diskon << endl;
+			cout << "Total Pembayaran Setelah diskon  : Rp "<< total << endl;
+		}
+		
+		cout << "Apakah anda ingin memesan lagi? [jika iya ketik 1 / jika tidak ketik 2] :  "; cin>> iyaa;
+		if(iyaa == 1){
+		    goto ulangg;
+		}if(iyaa == 2){
+		    goto jadi;
+		}
+				
+				break;
+			default:
+				cout << "Pilihan menu yang anda pilih tidak tersedia..." << endl;
+				goto ulang;
+		}
+	
+
+		jadi:
+	
+		
 		cout << "--------------------------------------------" << endl;
+		cout << "Semua total pembayaran anda adalah : " << total << endl;
 		cout << "Silahkan bayar disini 		 : Rp."; 		cin>>bayar;
 		cout << endl;
 				
